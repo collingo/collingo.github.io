@@ -152,6 +152,10 @@ footer .about {
   font-size: 0.7em;
 }
 
+footer .links ul {
+  margin:0;
+}
+
 footer .links ul li {
   list-style:none;
   display: inline-block;
