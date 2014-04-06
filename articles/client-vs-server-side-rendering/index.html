@@ -4,30 +4,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
-    <title>Collingo
+    <title>Client vs server side rendering - Collingo
     </title>
     <link rel="alternate" href="http://collingo.com//feed.xml" type="application/rss+xml" title="JavaScript and Front-end Web Developer">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
     <link rel="stylesheet" href="/css/main.css">
   </head>
-  <body>
+  <body class="article-detail">
     <header class="header">
       <div class="content-wrap">
-        <div class="logo">
-          <h1><a href="/">Collingo</a></h1>
-          <p class="description">JavaScript and Front-end Web Developer</p>
-        </div><p>I am a JavaScript developer with a passion for architecting and building front-end web applications. I have spent the last two years leading work on highly interactive single page apps and multi-million pound websites.</p>
-<p>I have production experience in a wide range of technologies and love to explore new ones whenever I get the chance. Most of all, I still get a kick out of turning ideas into beautifully functional, well architected products using lean, modular code and a text editor.</p>
-
+        <h1>Client vs server side rendering</h1>
+        <p class="author">Written by <span class="author">Nick Collings</span>, 05. April 2014
+        </p>
       </div>
     </header>
     <div id="content">
       <div class="content-wrap">
-        <article class="article intro">
-          <header>
-            <p class="date"><span>05. April 2014</span></p>
-            <h2><a href="/articles/client-vs-server-side-rendering/">Client vs server side rendering</a></h2>
-          </header>
+        <article class="article">
           <section class="content"><p>One of the biggest problems with the front end web application stack is the lack of code sharing. This is particularly frustrating when it comes to rendering. We are forced to have two different rendering contexts; one for the server, one for the client. At first this seems reasonable - the server needs only produce one mammoth piece of static <span class="caps">HTML</span> whilst the client needs to be more dynamic and modular. While this will always be true, I believe we have overlooked some opportunities for code&nbsp;sharing.</p>
 <p>The old web application architecture (Rails and Django etc) saw all the logic and rendering on the server. The client was little more than a web page renderer with full reloads between each view/action. This resulted in a clunky feel to the application which ultimately could not compete with a native&nbsp;experience.</p>
 <p>More recent solutions like Backbone (which I have been using for 3 years or so now) sought to take advantage of <span class="caps">AJAX</span> to provide richer interfaces. Apps started to feel faster, slicker, and allowed for more complex visuals and interactions. Definitely a positive move. Unfortunately this richness came with the caveat that all the rendering takes place on the client. This has reuslted in many apps having slow initial render times and sometimes even the dreaded loading bars of the Flash era. Where we have gained we have lost elsewhere. Apart from anything else this clearly wastes the power of the server turning it into a dumb web server and data&nbsp;provider.</p>
@@ -44,40 +37,13 @@
 <h4 id="that-s-a-tall-order-what-would-this-require-">That’s a tall order. What would this&nbsp;require?</h4>
 <p>Templates would need to output <span class="caps">HTML</span>/DOM such that the data model bindings can be inferred using only the original template as a reference. Essentially templates that allow for reverse&nbsp;compilation.</p>
 <p>Current languages, such as Handlebars, support features that prevent the original template being inferred from the <span class="caps">HTML</span>, as highlighted by blerik’s <a href="http://stackoverflow.com/a/19271995">this excellent Stack Overflow answer</a>. Using a subset, aligning to blerik’s rules, should give us a workable&nbsp;solution.</p>
-
-          </section>
-        </article>
-        <article class="article intro">
-          <header>
-            <p class="date"><span>05. April 2014</span></p>
-            <h2><a href="/articles/front-end-analysis/">Front end analysis</a></h2>
-          </header>
-          <section class="content"><p>I’ve had my frustrations with front end application frameworks/libraries for a while now. None of them are quite perfect. I’d like to get down what I’d like to see and feel should be&nbsp;feasible.</p>
-<ol>
-<li>Self contained functional view components - pass them data, a template and a little view-model mapping magic and you’re off! On the server these return <span class="caps">HTML</span>, on the client they produce ready-bound DOM.<ol>
-<li>Two-way data binding built in as standard on the client&nbsp;side.</li>
-<li>View logic defined declaratively in the&nbsp;templates.</li>
-<li>A simple way to map the data-model to the&nbsp;view-model.</li>
-</ol>
-</li>
-<li>Sharable logic<ol>
-<li>Routing - just needs to invoke a&nbsp;controller.</li>
-<li>Controllers - a controller defines a mapping of a layout, to functional components, to data. This mapping exists, in the same form, on both the server and client so it should be&nbsp;sharable.</li>
-<li>Models - business logic exists independent of any presentation format so should easily be&nbsp;sharable.</li>
-<li>Views - compiled as they are on the front end, not from some nested set of Jade templates but as the output of the controllers compilation of layout, model and view&nbsp;components.</li>
-</ol>
-</li>
-<li>Templates that can be used as blueprints to both compile and parse <span class="caps">HTML</span>/DOM. This is a big one. The ability to compile HTML is the well trodden path of templating languages. The next step, as I see it, would be to define a template once and then use it to both generate ready-bound DOM and also to augment any existing unbound DOM with bindings. The latter is particularly important as it opens up the options of server side view rendering. Perceived load times would be shorter and the requirement of JS rendering would be removed&nbsp;entirely.</li>
-</ol>
-
-          </section>
+</section>
         </article>
       </div>
     </div>
     <footer>
       <div class="content-wrap">
-        <div class="nav"><a href="/archive.html">« Archives</a>
-        </div>
+        <div class="nav"><a href="/">« Full blog</a></div>
         <section class="links"><ul>
 <li><a href="http://twitter.com/collingo">Twitter</a></li>
 <li><a href="http://github.com/collingo">GitHub</a></li>

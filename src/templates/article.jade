@@ -13,6 +13,8 @@ block header
   p.author
     | #{ "Written by " }
     mixin author(page.metadata.author)
+    | #{ ", " }
+    = moment.utc(page.metadata.date).format('DD. MMMM YYYY')
 
 block content
   article.article
