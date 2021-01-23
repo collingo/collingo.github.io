@@ -1,0 +1,1 @@
+wintersmith build -o ../built -C src
