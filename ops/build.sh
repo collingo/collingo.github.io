@@ -1,1 +1,1 @@
-wintersmith build -o ../built -C src
+wintersmith build -o ../docs -C src
