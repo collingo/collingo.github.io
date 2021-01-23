@@ -5,13 +5,13 @@
     <atom:link href="https://collingo.com/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>https://collingo.com</link>
     <description></description>
-    <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
+    <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
       <title>Hello World</title>
       <link>https://collingo.com/articles/hello-world/</link>
-      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://collingo.com/articles/hello-world/</guid>
       <author>Nick Collings</author>
       <description>&lt;p&gt;Welcome to your new blog! This is the default blog template with RSS, pagination and an archive. There are other templates available – run &lt;code&gt;wintersmith new --help&lt;/code&gt; to list them.&lt;/p&gt;
