@@ -1,3 +1,0 @@
-- [Twitter](http://twitter.com/collingo)
-- [GitHub](http://github.com/collingo)
-- [LinkedIn](http://linkedin.com/in/nickcollings)

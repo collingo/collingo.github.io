@@ -2,59 +2,77 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Collingo</title>
-    <atom:link href="http://collingo.com//feed.xml" rel="self" type="application/rss+xml"></atom:link>
-    <link>http://collingo.com/</link>
-    <description>JavaScript and Front-end Web Developer</description>
-    <pubDate>Sat, 05 Apr 2014 16:00:00 +0100</pubDate>
+    <atom:link href="https://collingo.com/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>https://collingo.com</link>
+    <description></description>
+    <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
-      <title>Client vs server side rendering</title>
-      <link>http://collingo.com//articles/client-vs-server-side-rendering/</link>
-      <pubDate>Sat, 05 Apr 2014 16:00:00 +0100</pubDate>
-      <guid isPermaLink="true">http://collingo.com//articles/client-vs-server-side-rendering/</guid>
-      <author></author>
-      <description>&lt;p&gt;One of the biggest problems with the front end web application stack is the lack of code sharing. This is particularly frustrating when it comes to rendering. We are forced to have two different rendering contexts; one for the server, one for the client. At first this seems reasonable - the server needs only produce one mammoth piece of static HTML whilst the client needs to be more dynamic and modular. While this will always be true, I believe we have overlooked some opportunities for code sharing.&lt;/p&gt;
-&lt;p&gt;The old web application architecture (Rails and Django etc) saw all the logic and rendering on the server. The client was little more than a web page renderer with full reloads between each view/action. This resulted in a clunky feel to the application which ultimately could not compete with a native experience.&lt;/p&gt;
-&lt;p&gt;More recent solutions like Backbone (which I have been using for 3 years or so now) sought to take advantage of AJAX to provide richer interfaces. Apps started to feel faster, slicker, and allowed for more complex visuals and interactions. Definitely a positive move. Unfortunately this richness came with the caveat that all the rendering takes place on the client. This has reuslted in many apps having slow initial render times and sometimes even the dreaded loading bars of the Flash era. Where we have gained we have lost elsewhere. Apart from anything else this clearly wastes the power of the server turning it into a dumb web server and data provider.&lt;/p&gt;
-&lt;p&gt;While I understand you cannot always expect complete render parity between client and server (the server shouldn’t be handling every single interactions via full page reloads and the client probably shouldn’t be juggling massive data sets either) I feel the black or white options we have available to us are too simple. A balance must be struck. We can do better.&lt;/p&gt;
-&lt;h4 id=&quot;what-can-we-do-&quot;&gt;What can we do?&lt;/h4&gt;
-&lt;p&gt;As I mentioned in an &lt;a href=&quot;http://collingo.com/articles/front-end-analysis/&quot;&gt;earlier post&lt;/a&gt; I believe templating is a key area to look at. Templates can do more than just compile down to HTML. In fact we are seeing solutions like &lt;a href=&quot;http://www.ractivejs.org/&quot;&gt;Ractive&lt;/a&gt; from the tech heads at the Guardian take bolder steps. They take an only slightly enhanced super set of &lt;a href=&quot;http://handlebarsjs.com/&quot;&gt;Handlebars&lt;/a&gt; and give you back a nice two-way bound DOM, ready to roll. Everyone knows Google’s &lt;a href=&quot;http://angularjs.org/&quot;&gt;Angular&lt;/a&gt; gives us the same in a more declarative form, using the DOM as the template. Again another great step but both solutions leave the server out in the cold, rendering partial views and leaving the rest to the client.&lt;/p&gt;
-&lt;p&gt;To improve on this, I’d like to see templates treated like blueprints which could be used in one of the following ways; either&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;taking a model and producing HTML or&lt;/li&gt;
-&lt;li&gt;taking a model and producing a ready-bound DOM fragment or&lt;/li&gt;
-&lt;li&gt;taking some unbound DOM and binding it to an existing model&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The first is the process we are familar with from the Backbone universe - producing HTML is still a cumbersome approach on the client but still necessary for the server. The second covers client side rendering as with Ractive’s techniques. The final approach would be massively useful when working with pages pre-rendered on the server (using the first approach incidentally). Angular has made a move towards the latter but expects templates in the DOM rather than the final mark up.&lt;/p&gt;
-&lt;h4 id=&quot;that-s-a-tall-order-what-would-this-require-&quot;&gt;That’s a tall order. What would this require?&lt;/h4&gt;
-&lt;p&gt;Templates would need to output HTML/DOM such that the data model bindings can be inferred using only the original template as a reference. Essentially templates that allow for reverse compilation.&lt;/p&gt;
-&lt;p&gt;Current languages, such as Handlebars, support features that prevent the original template being inferred from the HTML, as highlighted by blerik’s &lt;a href=&quot;http://stackoverflow.com/a/19271995&quot;&gt;this excellent Stack Overflow answer&lt;/a&gt;. Using a subset, aligning to blerik’s rules, should give us a workable solution.&lt;/p&gt;
-</description>
-    </item>
-    <item>
-      <title>Front end analysis</title>
-      <link>http://collingo.com//articles/front-end-analysis/</link>
-      <pubDate>Sat, 05 Apr 2014 15:00:00 +0100</pubDate>
-      <guid isPermaLink="true">http://collingo.com//articles/front-end-analysis/</guid>
-      <author></author>
-      <description>&lt;p&gt;I’ve had my frustrations with front end application frameworks/libraries for a while now. None of them are quite perfect. I’d like to get down what I’d like to see and feel should be feasible.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Self contained functional view components - pass them data, a template and a little view-model mapping magic and you’re off! On the server these return HTML, on the client they produce ready-bound DOM.&lt;ol&gt;
-&lt;li&gt;Two-way data binding built in as standard on the client side.&lt;/li&gt;
-&lt;li&gt;View logic defined declaratively in the templates.&lt;/li&gt;
-&lt;li&gt;A simple way to map the data-model to the view-model.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Sharable logic&lt;ol&gt;
-&lt;li&gt;Routing - just needs to invoke a controller.&lt;/li&gt;
-&lt;li&gt;Controllers - a controller defines a mapping of a layout, to functional components, to data. This mapping exists, in the same form, on both the server and client so it should be sharable.&lt;/li&gt;
-&lt;li&gt;Models - business logic exists independent of any presentation format so should easily be sharable.&lt;/li&gt;
-&lt;li&gt;Views - compiled as they are on the front end, not from some nested set of Jade templates but as the output of the controllers compilation of layout, model and view components.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Templates that can be used as blueprints to both compile and parse HTML/DOM. This is a big one. The ability to compile HTML is the well trodden path of templating languages. The next step, as I see it, would be to define a template once and then use it to both generate ready-bound DOM and also to augment any existing unbound DOM with bindings. The latter is particularly important as it opens up the options of server side view rendering. Perceived load times would be shorter and the requirement of JS rendering would be removed entirely.&lt;/li&gt;
-&lt;/ol&gt;
+      <title>Hello World</title>
+      <link>https://collingo.com/articles/hello-world/</link>
+      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://collingo.com/articles/hello-world/</guid>
+      <author>Nick Collings</author>
+      <description>&lt;p&gt;Welcome to your new blog! This is the default blog template with RSS, pagination and an archive. There are other templates available – run &lt;code&gt;wintersmith new --help&lt;/code&gt; to list them.&lt;/p&gt;
+&lt;h2 id=&quot;repeat-after-me-this-is-my-blog-there-are-many-like-it-but-this-one-is-mine-my-blog-is-my-best-friend-it-is-my-life-i-must-master-it-as-i-must-master-my-life-my-blog-without-me-is-useless-without-my-blog-i-am-useless-&quot;&gt;&lt;em&gt;Repeat after me:&lt;/em&gt; This is my blog. There are many like it, but this one is mine. My blog is my best friend. It is my life. I must master it as I must master my life. My blog, without me, is useless. Without my blog, I am useless.&lt;/h2&gt;
+&lt;p&gt;Good, now, the directory structure of your blog is as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;├── config.json               &amp;lt;- site configuration
+├── contents
+│   ├── about.md
+│   ├── archive.json
+│   ├── articles              &amp;lt;– each article has its own directory
+│   │   ├── another-test
+│   │   │   └── index.md
+│   │   ├── bamboo-cutter
+│   │   │   ├── index.md
+│   │   │   └── taketori_monogatari.jpg
+│   │   ├── hello-world
+│   │   │   └── index.md
+│   │   ├── markdown-syntax
+│   │   │   └── index.md
+│   │   └── red-herring
+│   │       ├── banana.png
+│   │       └── index.md
+│   ├── authors               &amp;lt;- author metadata, check author.pug
+│   │   ├── baker.json
+│   │   └── the-wintersmith.json
+│   ├── css
+│   │   └── main.css
+│   └── feed.json
+├── plugins
+│   └── paginator.coffee      &amp;lt;- paginator plugin
+├── templates
+│   ├── archive.pug
+│   ├── article.pug
+│   ├── author.pug
+│   ├── feed.pug
+│   ├── index.pug
+│   └── layout.pug
+└── views
+    └── articles.coffee       &amp;lt;- view that lists articles&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Articles are sorted by date and 3 are shown per page, you can configure this and more in config.json. Check paginator.coffee for all options related to pagination, most plugins also have their own options.&lt;/p&gt;
+&lt;h3 id=&quot;a-typical-article&quot;&gt;A typical article&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-markdown&quot;&gt;---
+title: Hear me blog
+author: johndoe
+&lt;span class=&quot;section&quot;&gt;date: 2012-12-12 12:12
+---&lt;/span&gt;
+
+This will be shown as the article excerpt.
+
+&lt;span class=&quot;section&quot;&gt;## A h2, hr or &amp;lt;span class=&quot;more&quot;&amp;gt; marks where the intro cuts off&lt;/span&gt;
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;links-in-the-markdown-to-other-items-in-the-content-tree-will-be-resolved-for-you-&quot;&gt;Links in the markdown to other items in the content tree will be resolved for you.&lt;/h2&gt;
+&lt;p&gt;For example a link to &lt;code&gt;../bamboo-cutter/index.md&lt;/code&gt; resolves to &lt;a href=&quot;https://collingo.com/articles/bamboo-cutter/index.md&quot;&gt;&lt;code&gt;/articles/bamboo-cutter/&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;This is where I leave you to your own devices. Join &lt;strong&gt;#wintersmith&lt;/strong&gt; on freenode if you have any questions.&lt;/p&gt;
 </description>
     </item>
   </channel>

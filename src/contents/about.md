@@ -2,6 +2,17 @@
 view: none
 ---
 
-JavaScript developer with a passion for architecting and building client-side web applications. Several years wide ranging experience, from leading large front-end builds to getting elbow deep in test driven code on highly-interactive, data-driven apps.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat.
 
-Constant exploration has given me production experience in a wide range of technologies and I am always keen to try more. Most of all, I still get a kick out of turning ideas into beautifully functional, well architected products using lean, modular code and a text editor.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+dolore eu fugiat nulla pariatur.
+
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+deserunt mollit anim id est laborum.
+
+
+[1]: http://johan-nordberg.com
+[2]: http://opensource.org/licenses/MIT

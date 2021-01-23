@@ -1,10 +1,9 @@
 {
-  "output": "../",
   "locals": {
-    "url": "http://collingo.com/",
+    "url": "https://collingo.com",
     "name": "Collingo",
     "owner": "Nick Collings",
-    "description": "JavaScript and Front-end Web Developer"
+    "description": ""
   },
   "plugins": [
     "./plugins/paginator.coffee"
@@ -14,7 +13,7 @@
     "_": "underscore",
     "typogr": "typogr"
   },
-  "jade": {
+  "pug": {
     "pretty": true
   },
   "markdown": {
@@ -23,6 +22,5 @@
   },
   "paginator": {
     "perPage": 3
-  },
-  "port": 9000
+  }
 }
